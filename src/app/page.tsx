@@ -7,7 +7,7 @@ import { decode } from "../lib/decode";
 import EmojiPicker from "../components/emoji-picker";
 
 export default function Home() {
-  const [tab, setTab] = useState<"decode" | "encode">("decode");
+  const [tab, setTab] = useState<"decode" | "encode">("encode");
 
   // Encode state
   const [emoji, setEmoji] = useState("🙂");
@@ -87,20 +87,20 @@ export default function Home() {
 
           <div className={styles.tabs} role="tablist" aria-label="Encode or Decode">
             <button
-              className={`${styles.tab} ${tab === "decode" ? styles.active : ""}`}
-              role="tab"
-              aria-selected={tab === "decode"}
-              onClick={() => setTab("decode")}
-            >
-              Decode
-            </button>
-            <button
               className={`${styles.tab} ${tab === "encode" ? styles.active : ""}`}
               role="tab"
               aria-selected={tab === "encode"}
               onClick={() => setTab("encode")}
             >
               Encode
+            </button>
+            <button
+              className={`${styles.tab} ${tab === "decode" ? styles.active : ""}`}
+              role="tab"
+              aria-selected={tab === "decode"}
+              onClick={() => setTab("decode")}
+            >
+              Decode
             </button>
           </div>
 
