@@ -44,13 +44,11 @@
 }
 
 .pickerHeader {
-  /* Make category tabs + close button sticky and always visible while scrolling */
+  /* Close button stays visible while scrolling */
   position: sticky;
-  top: 12px;
+  top: 0px;
   z-index: 12;
   display: flex;
-  gap: 8px;
-  align-items: center;
   justify-content: space-between;
   background: linear-gradient(180deg, rgba(8,8,8,0.98), rgba(10,10,10,0.92));
   padding: 6px;
@@ -65,32 +63,23 @@
   border: none;
   cursor: pointer;
   padding: 6px 8px;
-  padding-bottom: 20px;
 }
 
-.categoryTabs {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  padding-bottom: 8px;
-  margin-bottom: 6px;
+.categorySection {
+  margin-bottom: 12px;
 }
 
-.categoryTab {
-  background: transparent;
+.categoryTitle {
+  font-size: 13px;
   color: var(--text-secondary);
-  border: 1px solid transparent;
-  padding: 6px 10px;
-  border-radius: 999px;
+  margin: 6px 0 8px;
   font-weight: 600;
-  cursor: pointer;
-  white-space: nowrap;
 }
 
-.categoryActive {
-  background: rgba(255,255,255,0.04);
-  color: var(--text-primary);
-  border-color: rgba(255,255,255,0.06);
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .emojiGrid {
