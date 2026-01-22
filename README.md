@@ -1,5 +1,7 @@
 # Emoji — Encode & Decode
 
+**Live demo:** https://emoji.jujiplay.com/
+
 Embed short secrets inside an emoji using invisible Unicode variation selectors, or reveal hidden messages from emoji payloads.
 
 This small Next.js app provides a simple UI for encoding text into an emoji and decoding hidden payloads back into readable text.
