@@ -12,7 +12,6 @@ export default function EmojiPicker({
   onChange: (e: string) => void;
 }) {
   const [open, setOpen] = useState(false);
-  const [search, setSearch] = useState("");
   const [category, setCategory] = useState(EMOJI_CATEGORIES[0]?.id ?? "");
   const ref = useRef<HTMLDivElement | null>(null);
 
@@ -46,35 +45,28 @@ export default function EmojiPicker({
 
       {open && (
         <div className={styles.picker} role="dialog" aria-label="Emoji picker">
-          <div className={styles.pickerSearchWrap}>
-            <input
-              className={styles.pickerSearch}
-              placeholder="Search emoji (by char)..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
+          <div className={styles.pickerHeader}>
+            <div className={styles.categoryTabs} role="tablist" aria-label="Emoji categories">
+              {EMOJI_CATEGORIES.map((c) => (
+                <button
+                  key={c.id}
+                  className={`${styles.categoryTab} ${category === c.id ? styles.categoryActive : ""}`}
+                  onClick={() => setCategory(c.id)}
+                  role="tab"
+                  aria-selected={category === c.id}
+                >
+                  {c.title}
+                </button>
+              ))}
+            </div>
+
             <button className={styles.pickerClose} onClick={() => setOpen(false)} aria-label="Close picker">
               ✕
             </button>
           </div>
 
-          <div className={styles.categoryTabs} role="tablist" aria-label="Emoji categories">
-            {EMOJI_CATEGORIES.map((c) => (
-              <button
-                key={c.id}
-                className={`${styles.categoryTab} ${category === c.id ? styles.categoryActive : ""}`}
-                onClick={() => setCategory(c.id)}
-                role="tab"
-                aria-selected={category === c.id}
-              >
-                {c.title}
-              </button>
-            ))}
-          </div>
-
           <div className={styles.emojiGrid}>
             {(EMOJI_CATEGORIES.find((c) => c.id === category)?.items || [])
-              .filter((e) => !search || e.includes(search))
               .map((e) => (
                 <button
                   key={e}
@@ -82,7 +74,6 @@ export default function EmojiPicker({
                   onClick={() => {
                     onChange(e);
                     setOpen(false);
-                    setSearch("");
                   }}
                   title={e}
                 >
