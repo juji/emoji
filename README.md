@@ -73,7 +73,7 @@ pnpm build && next export
 
 - The app is optimized for static export (`next export`) or Vercel deployment
 - For Vercel, just connect the repository and deploy; set `NODE_ENV=production` during builds
-
+- **Live demo:** https://emoji.jujiplay.com/
 
 ---
 
