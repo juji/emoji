@@ -19,6 +19,7 @@ export default function Home() {
   const [payload, setPayload] = useState("");
 
   const [output, setOutput] = useState("");
+  const [copied, setCopied] = useState(false);
 
   const handleEncode = () => {
     try {
@@ -69,8 +70,11 @@ export default function Home() {
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(output);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
     } catch {
       // ignore
+      setCopied(false);
     }
   };
 
@@ -147,7 +151,7 @@ export default function Home() {
 
             <div className={styles.footer}>
               <button className={styles.small} onClick={handleCopy} disabled={!output}>
-                Copy
+                {copied ? "Copied!" : "Copy"}
               </button>
             </div>
           </div>
