@@ -1,0 +1,96 @@
+.emojiInput {
+  width: 84px;
+  padding: 8px 10px;
+  font-size: 28px;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.04);
+  background: rgba(255,255,255,0.01);
+  color: var(--text-primary);
+}
+
+.emojiField {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  position: relative;
+}
+
+.emojiPickerButton {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.03);
+  color: var(--text-primary);
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.picker {
+  position: absolute;
+  top: 56px;
+  left: 0;
+  width: 420px;
+  max-height: 320px;
+  /* Dark surface with blur so emojis pop */
+  background: linear-gradient(180deg, rgba(8,8,8,0.98), rgba(10,10,10,0.92));
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 12px;
+  border-radius: 10px;
+  overflow: auto;
+  z-index: 60;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.72);
+  backdrop-filter: blur(6px);
+}
+
+.pickerSearchWrap {
+  /* Keep search and close fixed while the grid scrolls */
+  position: sticky;
+  top: 0px;
+  z-index: 10;
+  background: linear-gradient(180deg, rgba(8,8,8,0.98), rgba(10,10,10,0.92));
+  padding: 6px;
+  border-radius: 8px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.6);
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.pickerSearch {
+  flex: 1 1 0;
+  background: rgba(255,255,255,0.01);
+  border: 1px solid rgba(255,255,255,0.03);
+  padding: 8px 10px;
+  border-radius: 8px;
+  color: var(--text-primary);
+}
+
+.pickerClose {
+  background: transparent;
+  color: var(--text-secondary);
+  border: none;
+  cursor: pointer;
+  padding: 6px 8px;
+}
+
+.emojiGrid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 6px;
+}
+
+.emojiCell {
+  background: transparent;
+  border: none;
+  padding: 6px;
+  font-size: 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.emojiCell:hover {
+  background: rgba(255,255,255,0.06);
+  transform: translateY(-1px);
+}

@@ -14,27 +14,35 @@
 
 .main {
   width: 100%;
-  max-width: 960px;
+  max-width: 920px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 20px;
-  background: transparent; /* let the page background show through (great for dark backgrounds) */
+  background: transparent;
   padding: 64px;
 }
 
-.intro {
+.card {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 28px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+.header {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 12px;
+  gap: 8px;
+  margin-bottom: 18px;
 }
 
 .title {
   margin: 0;
-  font-size: 44px;
+  font-size: 28px;
   line-height: 1.05;
   font-weight: 700;
   color: var(--text-primary);
@@ -42,19 +50,129 @@
 
 .lead {
   margin: 0;
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: 14px;
+  line-height: 1.4;
   max-width: 720px;
   color: var(--text-secondary);
 }
 
+.tabs {
+  display: inline-flex;
+  gap: 8px;
+  margin: 8px 0 18px 0;
+}
+
+.tab {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-secondary);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tab:focus {
+  outline: 2px solid rgba(255,255,255,0.06);
+}
+
+.active {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.label {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.textarea {
+  min-height: 96px;
+  width: 100%;
+  resize: vertical;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.02);
+  color: var(--text-primary);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn {
+  background: var(--foreground);
+  color: var(--background);
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btnGhost {
+  background: transparent;
+  color: var(--text-secondary);
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.02);
+  cursor: pointer;
+}
+
+.btnGhost:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.output {
+  white-space: pre-wrap;
+  background: rgba(255,255,255,0.01);
+  color: var(--text-primary);
+  padding: 12px 14px;
+  border-radius: 8px;
+  min-height: 64px;
+  border: 1px solid rgba(255,255,255,0.02);
+  font-size: 13px;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.small {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid rgba(255,255,255,0.02);
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
 @media (max-width: 600px) {
   .main {
-    padding: 40px 20px;
+    padding: 32px 20px;
+  }
+
+  .card {
+    padding: 20px;
   }
 
   .title {
-    font-size: 32px;
-    line-height: 1.1;
+    font-size: 20px;
   }
 }
