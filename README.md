@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Emoji — Encode & Decode
 
-## Getting Started
+Embed short secrets inside an emoji using invisible Unicode variation selectors, or reveal hidden messages from emoji payloads.
 
-First, run the development server:
+This small Next.js app provides a simple UI for encoding text into an emoji and decoding hidden payloads back into readable text.
+
+---
+
+## 🎯 Features
+
+- Encode a short secret into an emoji using invisible variation selectors
+- Decode hidden payloads from emoji input
+- Inline Emoji Picker (toggle with the **Emoji Picker** button)
+- Copy output to clipboard with a transient "Copied!" notice and accessible `aria-live` feedback
+- Static export ready (see `next.config.ts` -> `output: "export"`)
+
+---
+
+## 🚀 Getting started
+
+Prerequisites:
+- Node.js (v18+ recommended)
+- `pnpm` (this project uses `pnpm` but `npm` or `yarn` will also work)
+
+Install and run locally:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Build and run production:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+pnpm build
+pnpm start
+```
 
-## Learn More
+Export static site (if you want an exported output):
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+pnpm build && next export
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🧩 Project structure
 
-## Deploy on Vercel
+- `src/app` — Next.js app routes and layout
+- `src/components` — UI components (including `emoji-picker`)
+- `src/lib` — encode/decode logic and emoji data
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ♿ Accessibility & UX
+
+- Emoji Picker toggles inline beneath the emoji input and is keyboard accessible
+- Copy action announces success via `aria-live` for screen reader users
+
+---
+
+## 🧪 Development notes
+
+- The app uses `next/font` for Geist fonts
+- Metadata (site title & description) is defined in `src/app/layout.tsx`
+- Conforms to simple, dependency-light approach
+
+---
+
+## 📦 Deployment
+
+- The app is optimized for static export (`next export`) or Vercel deployment
+- For Vercel, just connect the repository and deploy; set `NODE_ENV=production` during builds
+
+
+---
+
+## 🔗 Source / Inspiration
+
+This project implements the technique described in Sushan Taneupane's article: "Unicode secrets — Hide and reveal text inside emojis using variation selectors". Read the original writeup here:
+
+https://medium.com/@sushantaneupane/unicode-secrets-hide-and-reveal-text-inside-emojis-using-variation-selectors-a01c01e249cf
