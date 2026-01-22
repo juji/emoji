@@ -10,10 +10,9 @@
 }
 
 .emojiField {
-  display: inline-flex;
-  gap: 8px;
-  align-items: center;
-  position: relative;
+  display: block;
+  /* keep controls in one line */
+  padding-bottom: 8px;
 }
 
 .emojiPickerButton {
@@ -27,18 +26,17 @@
 }
 
 .picker {
-  position: absolute;
-  top: 56px;
-  left: 0;
-  width: 420px;
+  position: static;
+  width: 100%;
+  max-width: 720px;
   max-height: 320px;
+  margin-top: 8px;
   /* Dark surface with blur so emojis pop */
   background: linear-gradient(180deg, rgba(8,8,8,0.98), rgba(10,10,10,0.92));
   border: 1px solid rgba(255,255,255,0.04);
   padding: 12px;
   border-radius: 10px;
   overflow: auto;
-  z-index: 60;
   box-shadow: 0 12px 40px rgba(0,0,0,0.72);
   backdrop-filter: blur(6px);
 }

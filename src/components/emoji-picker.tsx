@@ -12,20 +12,10 @@ export default function EmojiPicker({
   onChange: (e: string) => void;
 }) {
   const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    function onDocClick(e: MouseEvent) {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
-        setOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", onDocClick);
-    return () => document.removeEventListener("mousedown", onDocClick);
-  }, []);
-
+  // Note: picker is now inline — it opens/closes only via the Emoji Picker button (toggle)
   return (
-    <div className={styles.emojiField} ref={ref}>
+    <div className={styles.emojiField}>
       <input
         className={styles.emojiInput}
         value={emoji}
@@ -36,10 +26,11 @@ export default function EmojiPicker({
       <button
         type="button"
         className={styles.emojiPickerButton}
-        aria-label="Open emoji picker"
+        aria-label="Toggle emoji picker"
+        aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
       >
-        Emoji Picker
+        {open ? "Close Emoji Picker" : "Emoji Picker"}
       </button>
 
       {open && (
