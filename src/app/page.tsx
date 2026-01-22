@@ -81,7 +81,7 @@ export default function Home() {
           <div className={styles.header}>
             <h1 className={styles.title}>Emoji — Encode & Decode</h1>
             <p className={styles.lead}>
-              Use invisible variation selectors to hide secrets inside emoji. Choose a tab, enter values, and run.
+              Embed short secrets inside an emoji using invisible variation selectors, or reveal hidden messages from an emoji. Use the <strong>Encode</strong> tab to hide text and the <strong>Decode</strong> tab to extract it — quick, simple, and Unicode-friendly.
             </p>
           </div>
 
