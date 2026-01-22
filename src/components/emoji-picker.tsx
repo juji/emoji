@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import styles from "./emoji-picker.module.css";
-import { EMOJIS } from "../lib/emojis";
+import { EMOJI_CATEGORIES } from "../lib/emojis";
 
 export default function EmojiPicker({
   emoji,
@@ -13,6 +13,7 @@ export default function EmojiPicker({
 }) {
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
+  const [category, setCategory] = useState(EMOJI_CATEGORIES[0]?.id ?? "");
   const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -57,21 +58,37 @@ export default function EmojiPicker({
             </button>
           </div>
 
-          <div className={styles.emojiGrid}>
-            {EMOJIS.filter((e) => !search || e.includes(search)).map((e) => (
+          <div className={styles.categoryTabs} role="tablist" aria-label="Emoji categories">
+            {EMOJI_CATEGORIES.map((c) => (
               <button
-                key={e}
-                className={styles.emojiCell}
-                onClick={() => {
-                  onChange(e);
-                  setOpen(false);
-                  setSearch("");
-                }}
-                title={e}
+                key={c.id}
+                className={`${styles.categoryTab} ${category === c.id ? styles.categoryActive : ""}`}
+                onClick={() => setCategory(c.id)}
+                role="tab"
+                aria-selected={category === c.id}
               >
-                {e}
+                {c.title}
               </button>
             ))}
+          </div>
+
+          <div className={styles.emojiGrid}>
+            {(EMOJI_CATEGORIES.find((c) => c.id === category)?.items || [])
+              .filter((e) => !search || e.includes(search))
+              .map((e) => (
+                <button
+                  key={e}
+                  className={styles.emojiCell}
+                  onClick={() => {
+                    onChange(e);
+                    setOpen(false);
+                    setSearch("");
+                  }}
+                  title={e}
+                >
+                  {e}
+                </button>
+              ))}
           </div>
         </div>
       )}

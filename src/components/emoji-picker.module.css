@@ -75,6 +75,31 @@
   padding: 6px 8px;
 }
 
+.categoryTabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  margin-bottom: 6px;
+}
+
+.categoryTab {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid transparent;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.categoryActive {
+  background: rgba(255,255,255,0.04);
+  color: var(--text-primary);
+  border-color: rgba(255,255,255,0.06);
+}
+
 .emojiGrid {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
