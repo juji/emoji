@@ -45,7 +45,7 @@ export default function EmojiPicker({
             <input
               type="search"
               className={styles.searchInput}
-              placeholder="Search emojis by name or glyph"
+              placeholder="Search emojis by name"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               aria-label="Search emojis"
