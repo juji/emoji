@@ -150,6 +150,7 @@ export default function Home() {
             <pre className={styles.output} aria-live="polite">{output}</pre>
 
             <div className={styles.footer}>
+              <div />
               <button className={styles.small} onClick={handleCopy} disabled={!output}>
                 {copied ? "Copied!" : "Copy"}
               </button>
@@ -157,6 +158,17 @@ export default function Home() {
           </div>
         </div>
       </main>
+
+      <footer className={styles.siteFooter}>
+        <a
+          href="https://github.com/juji/emoji"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.siteFooterLink}
+        >
+          GitHub · juji/emoji
+        </a>
+      </footer>
     </div>
   );
 }
