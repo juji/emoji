@@ -42,19 +42,19 @@
 
 .title {
   margin: 0;
-  font-size: 28px;
-  line-height: 1.05;
+  font-size: 36px;
+  line-height: 1.06;
   font-weight: 700;
   color: var(--text-primary);
-}
+} 
 
 .lead {
   margin: 0;
-  font-size: 14px;
-  line-height: 1.4;
+  font-size: 18px;
+  line-height: 1.6;
   max-width: 720px;
   color: var(--text-secondary);
-}
+} 
 
 .tabs {
   display: inline-flex;
@@ -90,22 +90,22 @@
 }
 
 .label {
-  font-size: 12px;
+  font-size: 16px;
   color: var(--text-secondary);
-}
+} 
 
 .textarea {
-  min-height: 96px;
+  min-height: 120px;
   width: 100%;
   resize: vertical;
-  padding: 12px 14px;
+  padding: 14px 16px;
   background: rgba(255,255,255,0.02);
   color: var(--text-primary);
   border: 1px solid rgba(255,255,255,0.04);
   border-radius: 8px;
   font-family: inherit;
-  font-size: 13px;
-}
+  font-size: 16px;
+} 
 
 .controls {
   display: flex;
@@ -116,21 +116,23 @@
 .btn {
   background: var(--foreground);
   color: var(--background);
-  padding: 8px 14px;
+  padding: 10px 16px;
   border-radius: 8px;
   border: none;
   cursor: pointer;
   font-weight: 600;
-}
+  font-size: 16px;
+} 
 
 .btnGhost {
   background: transparent;
   color: var(--text-secondary);
-  padding: 8px 12px;
+  padding: 10px 14px;
   border-radius: 8px;
   border: 1px solid rgba(255,255,255,0.02);
   cursor: pointer;
-}
+  font-size: 15px;
+} 
 
 .btnGhost:disabled {
   opacity: 0.4;
@@ -141,12 +143,12 @@
   white-space: pre-wrap;
   background: rgba(255,255,255,0.01);
   color: var(--text-primary);
-  padding: 12px 14px;
+  padding: 14px 16px;
   border-radius: 8px;
-  min-height: 64px;
+  min-height: 96px;
   border: 1px solid rgba(255,255,255,0.02);
-  font-size: 13px;
-}
+  font-size: 16px;
+} 
 
 .footer {
   display: flex;
@@ -158,10 +160,11 @@
   background: transparent;
   color: var(--text-secondary);
   border: 1px solid rgba(255,255,255,0.02);
-  padding: 6px 10px;
+  padding: 8px 12px;
   border-radius: 8px;
   cursor: pointer;
-}
+  font-size: 14px;
+} 
 
 @media (max-width: 600px) {
   .main {
@@ -173,6 +176,6 @@
   }
 
   .title {
-    font-size: 20px;
+    font-size: 28px;
   }
 }

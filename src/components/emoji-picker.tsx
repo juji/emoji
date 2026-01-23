@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import styles from "./emoji-picker.module.css";
 import { EMOJI_CATEGORIES } from "../lib/emojis";
 
