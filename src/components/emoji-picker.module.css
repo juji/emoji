@@ -44,6 +44,60 @@
   backdrop-filter: blur(6px);
 }
 
+.pickerHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  position: sticky;
+  top: 0;
+  background: linear-gradient(180deg, rgba(8,8,8,0.98), rgba(10,10,10,0.92));
+  z-index: 2;
+  border-bottom: 1px solid rgba(255,255,255,0.02);
+}
+
+.searchInput {
+  flex: 1 1 auto;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.01);
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+/* hide native browser clear (search) button so our single clear button is used */
+.searchInput::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+.searchInput::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+.searchInput {
+  padding-right: 36px; /* room for custom clear button */
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.clearButton {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 20px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.noResults {
+  padding: 18px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
 .categorySection {
   margin-bottom: 12px;
 }
@@ -54,7 +108,7 @@
   margin: 6px 0 8px;
   font-weight: 600;
   position: sticky;
-  top: 0;
+  top: 51px;
   background: linear-gradient(180deg, rgba(8,8,8,0.98), rgba(10,10,10,0.92));
   padding: 12px;
 }
