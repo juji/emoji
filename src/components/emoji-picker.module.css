@@ -9,6 +9,11 @@
   color: var(--text-primary);
 }
 
+.emojiPreview{
+  display: flex;
+  justify-content: space-between;
+}
+
 .emojiField {
   display: block;
   /* keep controls in one line */
@@ -28,7 +33,6 @@
 .picker {
   position: static;
   width: 100%;
-  max-width: 720px;
   max-height: 320px;
   margin-top: 8px;
   /* Dark surface with blur so emojis pop */
@@ -39,28 +43,6 @@
   overflow: auto;
   box-shadow: 0 12px 40px rgba(0,0,0,0.72);
   backdrop-filter: blur(6px);
-}
-
-.pickerHeader {
-  /* Close button stays visible while scrolling */
-  position: sticky;
-  top: 0px;
-  z-index: 12;
-  display: flex;
-  justify-content: space-between;
-  background: linear-gradient(180deg, rgba(8,8,8,0.98), rgba(10,10,10,0.92));
-  padding: 6px;
-  border-radius: 8px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.6);
-  margin-bottom: 8px;
-}
-
-.pickerClose {
-  background: transparent;
-  color: var(--text-secondary);
-  border: none;
-  cursor: pointer;
-  padding: 6px 8px;
 }
 
 .categorySection {
@@ -90,7 +72,7 @@
   background: transparent;
   border: none;
   padding: 6px;
-  font-size: 20px;
+  font-size: 32px;
   border-radius: 6px;
   cursor: pointer;
 }

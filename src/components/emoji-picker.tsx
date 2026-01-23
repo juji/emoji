@@ -16,29 +16,29 @@ export default function EmojiPicker({
   // Note: picker is now inline — it opens/closes only via the Emoji Picker button (toggle)
   return (
     <div className={styles.emojiField}>
-      <input
-        className={styles.emojiInput}
-        value={emoji}
-        onChange={(e) => onChange(e.target.value)}
-        aria-label="Emoji"
-      />
 
-      <button
-        type="button"
-        className={styles.emojiPickerButton}
-        aria-label="Toggle emoji picker"
-        aria-expanded={open}
-        onClick={() => setOpen((v) => !v)}
-      >
-        {open ? "Close Emoji Picker" : "Emoji Picker"}
-      </button>
+      <div className={styles.emojiPreview} aria-label="Selected emoji">
+
+        <input
+          className={styles.emojiInput}
+          value={emoji}
+          onChange={(e) => onChange(e.target.value)}
+          aria-label="Emoji"
+        />
+
+        <button
+          type="button"
+          className={styles.emojiPickerButton}
+          aria-label="Toggle emoji picker"
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? "Close Emoji Picker" : "Emoji Picker"}
+        </button>
+      </div>
 
       {open && (
         <div className={styles.picker} role="dialog" aria-label="Emoji picker">
-          <div className={styles.pickerHeader}>
-            <div>Emojis</div>
-            <button className={styles.pickerClose} onClick={() => setOpen(false)} aria-label="Close picker">✕</button>
-          </div>
 
           <div className={styles.categories}>
             {EMOJI_CATEGORIES.map((c) => (
