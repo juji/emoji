@@ -45,17 +45,21 @@ export default function EmojiPicker({
               <section key={c.id} className={styles.categorySection} aria-labelledby={`cat-${c.id}`}>
                 <div id={`cat-${c.id}`} className={styles.categoryTitle}>{c.title}</div>
                 <div className={styles.emojiGrid}>
-                  {c.items.map((e) => (
+                  {c.items.map((item) => (
                     <button
-                      key={e}
+                      key={item.char + item.name}
                       className={styles.emojiCell}
                       onClick={() => {
-                        onChange(e);
+                        onChange(item.char);
                         setOpen(false);
                       }}
-                      title={e}
+                      title={item.name}
+                      aria-label={item.name}
                     >
-                      {e}
+                      <div className={styles.emojiInner}>
+                        <div className={styles.emojiGlyph}>{item.char}</div>
+                        <div className={styles.emojiLabel}>{item.name}</div>
+                      </div>
                     </button>
                   ))}
                 </div>
