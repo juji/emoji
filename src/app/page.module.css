@@ -21,6 +21,7 @@
   gap: 20px;
   background: transparent;
   padding: 64px;
+  max-width: 900px;
 }
 
 .card {
